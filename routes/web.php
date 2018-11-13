@@ -20,3 +20,6 @@ Route::resource('authors', 'AuthorController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route::get('searchLibrary', 'BookController');
