@@ -38,7 +38,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                {{--<a class="nav-link" href="{{route('consultarAcervo')}}">{{__('Consultar acervo') }}"</a>--}}
+                                <a class="nav-link" href="{{route('consultCollection')}}">{{__('Consultar acervo') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Logar') }}</a>

@@ -22,4 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Route::get('searchLibrary', 'BookController');
+//Book Routes
+Route::get('/consultCollection', 'BookController@consultCollection')->name('consultCollection');

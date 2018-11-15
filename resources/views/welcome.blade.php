@@ -70,7 +70,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        {{--<a href="{{route('consultarAcervo')}}">Consultar acervo</a>--}}
+                        <a href="{{route('consultCollection')}}">Consultar acervo</a>
                         <a href="{{ route('login') }}">Logar</a>
 
                         @if (Route::has('register'))
