@@ -11,6 +11,8 @@
 |
 */
 
+
+//Rota principal
 Route::get('/', function () {
     return view('welcome');
 });

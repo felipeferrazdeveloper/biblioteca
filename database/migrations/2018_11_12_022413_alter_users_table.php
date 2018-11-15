@@ -15,6 +15,7 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function ($table){
             $table->foreign('loan_id')->references('id')->on('loans');
+            $table->foreign('user_type')->references('id')->on('user_type');
         });
     }
 

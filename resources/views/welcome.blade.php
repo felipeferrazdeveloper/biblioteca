@@ -70,13 +70,13 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{route('consultCollection')}}">Consultar acervo</a>
                         <a href="{{ route('login') }}">Logar</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrar</a>
                         @endif
                     @endauth
+                    <a href="{{route('consultCollection')}}">Consultar acervo</a>
                 </div>
             @endif
 

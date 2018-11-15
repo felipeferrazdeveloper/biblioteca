@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     public function consultCollection(){
-        return "Consultar acervo";
+        return view('book.consultCollection');
     }
 }
