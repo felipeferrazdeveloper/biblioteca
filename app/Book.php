@@ -10,6 +10,21 @@ class Book extends Model
         'name',
         'pages',
         'edition',
-        'ISBN'
+        'ISBN',
+        'category_id',
+        'author_id',
+        'publish_house_id'
     ];
+
+    public function category(){
+        return $this->belongsTo(Category);
+    }
+
+    public function author(){
+        return $this->belongsTo(Author);
+    }
+
+    public function publishHouse(){
+        return $this->belongsTo(PublishHouse);
+    }
 }

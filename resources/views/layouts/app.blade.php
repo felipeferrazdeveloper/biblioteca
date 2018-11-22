@@ -32,14 +32,52 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto"></ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    <ul class="navbar-nav mr-auto">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('consultCollection')}}">{{__('Consultar acervo') }}</a>
                             </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('consultCollection')}}">{{__('Consultar acervo') }}</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Livros<span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('listBook')}}">{{__('Listar livro') }}</a>
+                                    <a class="dropdown-item" href="{{route('addBook')}}">{{__('Adicionar livro') }}</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Dados complementares <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('listAuthor') }}">
+                                        {{ __('Autores') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('listCategories') }}">
+                                        {{ __('Categorias') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('listPublishHouses') }}">
+                                        {{ __('Editoras') }}
+                                    </a>
+                                </div>
+                            </li>
+
+
+                        @endguest
+                    </ul>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Logar') }}</a>
                             </li>

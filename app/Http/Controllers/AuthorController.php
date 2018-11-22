@@ -14,28 +14,18 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('author.list')->with('authors', Author::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function add(){
+        return view('author.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        Author::create($request->all());
+        return redirect('/authors')->withInput();
     }
 
     /**
@@ -80,6 +70,12 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+
+    }
+
+    public function remove($id){
+        $author = Author::find($id);
+        $author ->delete();
+        return redirect()->action('AuthorController@index');
     }
 }
